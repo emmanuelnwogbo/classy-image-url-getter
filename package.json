@@ -3,12 +3,10 @@
   "version": "1.0.0",
   "description": "A bookmarklet to quickly scrape URLs from Google image results for deep learning classification problems and more!",
   "main": "index.js",
-  "dependencies": {
-    "bookmarklet": "^1.0.2"
-  },
+  "dependencies": {},
   "devDependencies": {},
   "scripts": {
-    "build": "parcel index.html",
+    "build": "bookmarklet source.js bookmarklet.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
