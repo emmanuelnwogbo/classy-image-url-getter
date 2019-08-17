@@ -10,6 +10,7 @@
       <img src="https://img.shields.io/github/last-commit/ozramos/classy-image-url-getter">
     </a>
   </p>
+  <p><img src="https://i.imgur.com/rYbLeJT.png"></p>
 </div>
 
 # Features
@@ -19,6 +20,7 @@
 - Handles infinite scroll
 
 # How to use
+**See the video tutorial:** https://youtu.be/XrvAm9VQhgU
 
 - Create a new bookmark and enter the below code into the URL field
 - Go to Google's image search
