@@ -1,0 +1,24 @@
+{
+  "name": "classy-image-url-getter",
+  "version": "1.0.0",
+  "description": "A bookmarklet to quickly scrape URLs from Google image results for deep learning classification problems and more!",
+  "main": "index.js",
+  "dependencies": {
+    "bookmarklet": "^1.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "build": "parcel index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ozramos/classy-image-url-getter.git"
+  },
+  "author": "Oz Ramos <heyozramos@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ozramos/classy-image-url-getter/issues"
+  },
+  "homepage": "https://github.com/ozramos/classy-image-url-getter#readme"
+}
