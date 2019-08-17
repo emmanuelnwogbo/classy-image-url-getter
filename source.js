@@ -38,13 +38,7 @@ const parseImages = function() {
     });
   });
 };
-
-/**
- * Use an interval to handle infinite scrolling
- */
-setInterval(() => {
-  parseImages();
-}, 500);
+parseImages();
 
 /**
  * Updates the image list
@@ -73,6 +67,13 @@ $container.style.boxSizing = "border-box";
 $container.style.background = "rgba(255, 255, 255, 0.85)";
 document.body.appendChild($container);
 
+const $addMore = document.createElement("button");
+$addMore.textContent = "Add More 🖼";
+$addMore.style.fontSize = "18px";
+$addMore.style.marginBottom = "20px";
+$addMore.style.marginRight = "20px";
+$container.appendChild($addMore);
+
 const $download = document.createElement("button");
 $download.textContent = "Download 💾";
 $download.style.fontSize = "18px";
@@ -86,7 +87,14 @@ $text.style.height = "150px";
 $container.appendChild($text);
 
 /**
- * Hand download
+ * Add More
+ */
+$addMore.addEventListener("click", () => {
+  parseImages();
+});
+
+/**
+ * Handle download
  */
 $download.addEventListener("click", () => {
   let $a = document.createElement("a");
