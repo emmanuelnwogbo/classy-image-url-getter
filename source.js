@@ -37,8 +37,9 @@ const parseImages = function() {
       updateImageList();
     });
   });
+
+  updateImageList();
 };
-parseImages();
 
 /**
  * Updates the image list
@@ -51,6 +52,20 @@ const updateImageList = function() {
   });
 
   $text.value = urls;
+  updateImageCount();
+};
+
+/**
+ * Update the image counter
+ */
+const updateImageCount = function() {
+  let count = 0;
+
+  classyImages.forEach(image => {
+    if (image.isSelected) count++;
+  });
+
+  $numURLs.textContent = count + " images";
 };
 
 /**
@@ -67,6 +82,17 @@ $container.style.boxSizing = "border-box";
 $container.style.background = "rgba(255, 255, 255, 0.85)";
 document.body.appendChild($container);
 
+// Add Filename
+const $filename = document.createElement("input");
+$filename.setAttribute("type", "input");
+$filename.style.width = "200px";
+$filename.style.padding = "3px";
+$filename.style.fontSize = "18px";
+$filename.style.marginRight = "20px";
+$filename.value = "image-urls.txt";
+$container.appendChild($filename);
+
+// Add more button
 const $addMore = document.createElement("button");
 $addMore.textContent = "Add More 🖼";
 $addMore.style.fontSize = "18px";
@@ -74,12 +100,22 @@ $addMore.style.marginBottom = "20px";
 $addMore.style.marginRight = "20px";
 $container.appendChild($addMore);
 
+// Download button
 const $download = document.createElement("button");
 $download.textContent = "Download 💾";
 $download.style.fontSize = "18px";
 $download.style.marginBottom = "20px";
 $container.appendChild($download);
 
+// Number of files indicator
+const $numURLs = document.createElement("span");
+$numURLs.style.float = "right";
+$numURLs.style.fontSize = "18px";
+$numURLs.style.after = "20px";
+$numURLs.textContent = "";
+$container.appendChild($numURLs);
+
+// Textarea
 const $text = document.createElement("textarea");
 $text.style.display = "block";
 $text.style.width = "100%";
@@ -102,7 +138,7 @@ $download.addEventListener("click", () => {
     type: "application/text"
   });
   $a.href = URL.createObjectURL(file);
-  $a.download = `classy-urls.txt`;
+  $a.download = $filename.value;
   $a.click();
   $a.remove();
 });
@@ -111,4 +147,3 @@ $download.addEventListener("click", () => {
  * Finally, run everything once
  */
 parseImages();
-updateImageList();

@@ -1,6 +1,6 @@
 {
   "name": "classy-image-url-getter",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A bookmarklet to quickly scrape URLs from Google image results for deep learning classification problems and more!",
   "main": "index.js",
   "dependencies": {},
